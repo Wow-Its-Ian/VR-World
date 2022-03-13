@@ -9,22 +9,31 @@
   </head>
   <body>
     <a-scene>
-      <a-box position="1 0.5 -3" rotation="0 45 0" color="#4cc309"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#ef205e"></a-sphere>
+      <a-box
+        src="/assets/wood.jpg"
+        position="1 0.5 -3"
+        rotation="0 45 0"
+      ></a-box>
+      <a-sphere
+        src="/assets/abstract.jpg"
+        position="0 1.25 -5"
+        radius="1.25"
+      ></a-sphere>
       <a-cylinder
+        src="/assets/tree.jpg"
         position="-1 0.75 -3"
         radius="0.5"
         height="1.5"
-        color="#ffc650"
       ></a-cylinder>
       <a-plane
+        src="/assets/metal.jpg"
         position="0 0 -4"
         rotation="-90 0 0"
         width="4"
         height="4"
         color="#7bc8af"
       ></a-plane>
-      <a-sky color="#ececec"></a-sky>
+      <a-sky src="/assets/park360.jpg"></a-sky>
     </a-scene>
     <script src="./bundle.js"></script>
   </body>

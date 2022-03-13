@@ -9,6 +9,7 @@ const compiler = webpack(config);
 const PORT = process.env.PORT || 8080;
 
 // middleware
+app.use(express.static('public'));
 app.use(
   webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
