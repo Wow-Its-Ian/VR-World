@@ -1,0 +1,31 @@
+{
+  "name": "aframe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "server": "nodemon server.js",
+    "start": "webpack serve --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-loader": "^8.2.3",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-middleware": "^5.3.1",
+    "webpack-serve": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "webpack-dev-server": "^4.7.4"
+  }
+}
