@@ -12,40 +12,14 @@
       <!-- CAMERA -->
       <a-camera>
         <a-cursor raycaster="objects: .interactive"></a-cursor>
-        <!-- Or <a-entity cursor></a-entity> -->
       </a-camera>
-      <!-- ENTITY EXAMPLE -->
-      <a-entity component1="property1:value; property2:value" component2="property1:value; property2:value"></a-entity>
-      <!-- A-BOX FROM ENTITY -->
-      <a-entity
-        click-check
-        class="interactive"
-        geometry="primitive:box"
-        material="color:red"
-        position="-2.5 0.5 -3"
-        animation="
-      dur:10000;
-      property: rotation;
-      from: 0 0 0;
-      to:0 360 0;
-      loop:true;
-      "
-      ></a-entity>
-      <!-- LIGHT ENTITY -->
-      <!-- <a-entity
-        id="lightSphere"
-        geometry="primitive:sphere"
-        material="color:white; shader:flat;"
-        position="-4 3 -10"
-        light="type:point; color:white; intensity:1.5"
-        animation__movelight="property:position; dir:alternate; loop:true; from:-4 3 -10; to:4 3 -10"
-      ></a-entity> -->
-      <a-box class="interactive" src="assets/wood.jpg" position="1 0.5 -3" rotation="0 45 0">
+
+      <a-box class="interactive" position="1 0.5 -3" rotation="0 45 0">
         <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
       </a-box>
-      <a-sphere class="interactive" src="assets/abstract.jpg" position="0 1.25 -5" radius="1.25"></a-sphere>
-      <a-cylinder class="interactive" src="assets/tree.jpg" position="-1 0.75 -3" radius="0.5" height="1.5"></a-cylinder>
-      <a-plane src="assets/dirt.jpg" position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7bc8af"></a-plane>
+      <a-sphere class="interactive" position="0 1.25 -5" radius="1.25"></a-sphere>
+      <a-cylinder class="interactive" position="-1 0.75 -3" radius="0.5" height="1.5"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7bc8af"></a-plane>
       <a-sky src="https://live.staticflickr.com/65535/51927991824_9a8f860564_6k.jpg"></a-sky>
     </a-scene>
     <script src="./bundle.js"></script>
