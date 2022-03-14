@@ -9,11 +9,42 @@
   </head>
   <body>
     <a-scene>
-      <a-box
-        src="assets/wood.jpg"
+      <!-- ENTITY EXAMPLE -->
+      <a-entity
+        component1="property1:value; property2:value"
+        component2="property1:value; property2:value"
+      ></a-entity>
+      <!-- A-BOX FROM ENTITY -->
+      <a-entity
+        geometry="primitive:box"
+        material="color:red"
         position="1 0.5 -3"
-        rotation="0 45 0"
-      ></a-box>
+        animation="
+      dur:10000;
+      property: rotation;
+      from: 0 0 0;
+      to:0 360 0;
+      loop:true;
+      "
+      ></a-entity>
+      <!-- LIGHT ENTITY -->
+      <a-entity
+        id="lightSphere"
+        geometry="primitive:sphere"
+        material="color:white; shader:flat;"
+        position="-4 3 -10"
+        light="type:point; color:white; intensity:1.5"
+        animation__movelight="property:position; dir:alternate; loop:true; from:-4 3 -10; to:4 3 -10"
+      ></a-entity>
+      <a-box src="assets/wood.jpg" position="1 0.5 -3" rotation="0 45 0">
+        <a-animation
+          attribute="rotation"
+          dur="10000"
+          fill="forwards"
+          to="0 360 0"
+          repeat="indefinite"
+        ></a-animation>
+      </a-box>
       <a-sphere
         src="assets/abstract.jpg"
         position="0 1.25 -5"
