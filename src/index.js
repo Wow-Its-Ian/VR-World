@@ -29,7 +29,7 @@ const buttonKeys = {
 };
 
 document.addEventListener('gamepadbuttondown', (e) => {
-  const { index, value } = e.detail;
+  const { index } = e.detail;
   const button = xboxButtons[index];
   console.log('Button "%d" has been pressed.', index);
   console.log(`Button ${button} has been pressed.`);
