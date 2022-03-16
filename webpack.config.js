@@ -2,11 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: { main: './src/index.js', components: './src/aframeComponents.js' },
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: '[name]-bundle.js',
   },
   mode: 'development',
   target: 'web',
@@ -32,8 +32,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NoEmitOnErrorsPlugin()],
 };

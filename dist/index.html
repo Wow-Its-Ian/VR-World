@@ -5,23 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AR-Events</title>
-    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="//aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="//unpkg.com/aframe-extras@4.1.2/dist/aframe-extras.min.js"></script>
+    <script src="//unpkg.com/aframe-physics-system@3.1.2/dist/aframe-physics-system.min.js"></script>
   </head>
   <body>
-    <a-scene>
-      <!-- CAMERA -->
-      <a-camera look-controls wasd-controls="acceleration:100">
-        <a-cursor raycaster="objects: .interactive"></a-cursor>
-      </a-camera>
-
-      <a-box class="interactive" position="1 0.5 -3" rotation="0 45 0">
-        <a-animation attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+    <script src="./components-bundle.js"></script>
+    <a-scene physics=" debug: true;">
+      <!-- CAMERA RIG -->
+      <a-box kinematic-body jump-ability="distance: 10" id="rig" movement-controls="speed: 0.3" position="0 2 2">
+        <!-- CAMERA -->
+        <a-entity camera position="0 2 0" look-controls="pointerLockEnabled: true">
+          <a-cursor raycaster="objects: .interactive"></a-cursor>
+        </a-entity>
       </a-box>
-      <a-sphere class="interactive" position="0 1.25 -5" radius="1.25"></a-sphere>
-      <a-cylinder class="interactive" position="-1 0.75 -3" radius="0.5" height="1.5"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7bc8af"></a-plane>
+
+      <!-- <a-entity tracked-controls="controller: 0; idPrefix: Xbox"></a-entity> -->
+
+      <a-box dynamic-body class="interactive" position="1 5 -3" rotation="0 45 0"> </a-box>
+      <a-sphere dynamic-body class="interactive" position="0 8 -5" radius="1.25"></a-sphere>
+      <a-cylinder dynamic-body class="interactive" position="-1 4 -3" radius="0.5" height="1.5"></a-cylinder>
+      <a-plane static-body position="0 0 -4" rotation="-90 0 0" width="30" height="30" color="#7bc8af"></a-plane>
       <a-sky src="https://live.staticflickr.com/65535/51927991824_9a8f860564_6k.jpg"></a-sky>
     </a-scene>
-    <script src="./bundle.js"></script>
+    <script src="./main-bundle.js"></script>
   </body>
 </html>
